@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { pool } from '../db.ts';
-import type { HistoryResponse, GameStatus } from '../types.ts';
+import { pool } from '../db.js';
+import type { HistoryResponse, GameStatus } from '../types.js';
 
 interface HistoryRow {
   id: string;

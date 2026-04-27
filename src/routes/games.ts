@@ -1,15 +1,15 @@
 import { Router } from 'express';
-import { pool, withTransaction } from '../db.ts';
-import { AppError } from '../middleware/errors.ts';
-import { createGameSchema, revealSchema } from '../domain/schemas.ts';
-import { multiplier, nextMultiplier } from '../domain/multiplier.ts';
+import { pool, withTransaction } from '../db.js';
+import { AppError } from '../middleware/errors.js';
+import { createGameSchema, revealSchema } from '../domain/schemas.js';
+import { multiplier, nextMultiplier } from '../domain/multiplier.js';
 import {
   placeMines,
   isMine,
   isCellRevealed,
   toFullBoard,
   type Coord,
-} from '../domain/board.ts';
+} from '../domain/board.js';
 import type {
   CreateGameResponse,
   RevealGemResponse,
@@ -17,7 +17,7 @@ import type {
   CashoutResponse,
   GameStateResponse,
   RevealedCell,
-} from '../types.ts';
+} from '../types.js';
 
 export const gamesRouter = Router();
 

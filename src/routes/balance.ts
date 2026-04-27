@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { pool } from '../db.ts';
-import type { BalanceResponse } from '../types.ts';
+import { pool } from '../db.js';
+import type { BalanceResponse } from '../types.js';
 
 export const balanceRouter = Router();
 

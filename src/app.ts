@@ -1,10 +1,10 @@
 import express from 'express';
 import cors from 'cors';
-import { playerIdMiddleware } from './middleware/playerId.ts';
-import { errorHandler } from './middleware/errors.ts';
-import { balanceRouter } from './routes/balance.ts';
-import { historyRouter } from './routes/history.ts';
-import { gamesRouter } from './routes/games.ts';
+import { playerIdMiddleware } from './middleware/playerId.js';
+import { errorHandler } from './middleware/errors.js';
+import { balanceRouter } from './routes/balance.js';
+import { historyRouter } from './routes/history.js';
+import { gamesRouter } from './routes/games.js';
 
 export function createApp() {
   const app = express();
