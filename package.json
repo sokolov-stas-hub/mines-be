@@ -1,0 +1,27 @@
+{
+  "name": "mines-backend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file=.env.local --import tsx --watch src/dev-server.ts",
+    "typecheck": "tsc --noEmit",
+    "migrate": "node --env-file=.env.local --import tsx scripts/migrate.ts"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "ws": "^8.18.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.0.0",
+    "@types/ws": "^8.5.13",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vercel": "^39.0.0"
+  }
+}
