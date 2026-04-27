@@ -5,6 +5,7 @@ import { errorHandler } from './middleware/errors.js';
 import { balanceRouter } from './routes/balance.js';
 import { historyRouter } from './routes/history.js';
 import { gamesRouter } from './routes/games.js';
+import { docsRouter } from './routes/docs.js';
 
 export function createApp() {
   const app = express();
@@ -15,6 +16,9 @@ export function createApp() {
   app.get('/api/health', (_req, res) => {
     res.json({ ok: true });
   });
+
+  // Public docs — no X-Player-Id required, must be before playerIdMiddleware
+  app.use('/api', docsRouter);
 
   // All other /api/* routes require X-Player-Id (auto-creates player)
   app.use('/api', playerIdMiddleware);
