@@ -224,10 +224,10 @@ export function nextMultiplier(minesCount: number, gemsFound: number): number | 
 }
 ```
 
-Контрольні значення:
-- `multiplier(1, 1)` ≈ 1.03
-- `multiplier(5, 1)` ≈ 1.30
-- `multiplier(5, 3)` ≈ 2.42
+Контрольні значення (точні, з округленням до 0.01):
+- `multiplier(1, 1)` = 1.03
+- `multiplier(5, 1)` = 1.24
+- `multiplier(5, 3)` = 2.00
 - `multiplier(24, 1)` = 24.75
 
 ## 8. Структура проекту

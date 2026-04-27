@@ -349,13 +349,13 @@ npx tsx -e "import('./src/domain/multiplier.ts').then(m => { console.log('5/1:',
 
 Expected output:
 ```
-5/1: 1.3
-5/3: 2.42
+5/1: 1.24
+5/3: 2
 24/1: 24.75
 1/1: 1.03
 ```
 
-If numbers diverge from these, the formula or rounding is wrong — fix before moving on.
+(JS `console.log(2.00)` prints `2`, not `2.00` — that's expected.) If numbers diverge from these, the formula or rounding is wrong — fix before moving on.
 
 - [ ] **Step 5: Typecheck**
 
@@ -477,7 +477,7 @@ git commit -m "feat(types): add API DTO types"
 - [ ] **Step 1: Create `src/db.ts`**
 
 ```ts
-import { Pool, neonConfig } from '@neondatabase/serverless';
+import { Pool, neonConfig, type PoolClient } from '@neondatabase/serverless';
 import ws from 'ws';
 
 // In Node.js (non-Edge), the Neon serverless driver needs a WebSocket polyfill.
@@ -488,8 +488,6 @@ if (!process.env.DATABASE_URL) {
 }
 
 export const pool = new Pool({ connectionString: process.env.DATABASE_URL });
-
-type PoolClient = Awaited<ReturnType<typeof pool.connect>>;
 
 export async function withTransaction<T>(
   fn: (client: PoolClient) => Promise<T>,
